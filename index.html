@@ -1,76 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Github User Search</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>GitHub User Search</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-gray-200">
-    <div class="mx-auto my-20 w-96">
-        <form id="form" class="flex w-full pl-5 mb-5 border border-gray-600">
-            <input 
-                type="text"
-                name="username"
-                placeholder="Enter github username"
-                class="w-full outline-none "
-            >
+<body class="bg-gray-200 min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-md px-4">
+    <form id="form" class="flex w-full mb-5 border border-gray-400 rounded-md overflow-hidden bg-white shadow">
+      <input 
+        type="text"
+        name="username"
+        placeholder="Enter GitHub username"
+        class="w-full px-4 py-2 text-sm text-gray-700 outline-none"
+      />
+      <button 
+        type="submit"
+        class="px-5 py-2 text-white bg-gray-800 hover:bg-gray-900 transition"
+      >
+        Search
+      </button>
+    </form>
 
-            <button 
-                type="submit"
-                class="p-5 py-2 text-white bg-gray-600 border hover:bg-gray-700"
-            >search</button>
-        </form>
+    <section class="border border-gray-300 shadow-xl bg-white rounded-xl transition-all duration-300 hover:scale-[1.01]">
+      <div class="flex items-center gap-4 py-5 px-5">
+        <img
+          id="avatar" 
+          class="w-20 h-20 object-cover rounded-md border border-gray-300"
+          src="./assets/avatar.png" 
+          alt="profile image" 
+        />
+        <div>
+          <p id="username" class="text-lg font-semibold text-gray-800">Username</p>
+          <p id="join" class="text-sm text-gray-500">Joined at</p>
+        </div>
+      </div>
 
-        <section class="border border-gray-600 shadow-lg">
-            <div class="flex item-center gap-4 py-5 ml-5">
-                <img
-                    id="avatar" 
-                    class="w-20 rounded-md"
-                    src="./assets/avatar.png" 
-                    alt="profile image" 
-                >
+      <div class="flex items-center justify-around py-4 mx-5 my-2 text-center bg-gray-100 rounded-md border border-gray-200">
+        <div>
+          <p class="text-sm font-semibold">Repos</p>
+          <p id="repos" class="text-base text-gray-700">0</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Following</p>
+          <p id="following" class="text-base text-gray-700">0</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Followers</p>
+          <p id="followers" class="text-base text-gray-700">0</p>
+        </div>
+      </div>
 
-                <div>
-                    <p id="username">username</p>
-                    <p id="join">join at</p>
-                </div>
-            </div>
+      <div class="px-6 pb-4 text-gray-700 text-sm">
+        <div class="flex gap-2 py-1 items-center">
+          <img src="./assets/map-pin.svg" alt="Location" class="w-5" />
+          <p id="location">Not available</p>
+        </div>
+        
+        <div class="flex gap-2 py-1 items-center">
+          <img src="./assets/building-office-2.svg" alt="Company" class="w-5" />
+          <p id="office">Not available</p>
+        </div>
 
-            <div class="flex item-center justify-around py-4 mx-5 my-2 text-center bg-gray-200 rounded-md">
-                <div>
-                    <p>Repos</p>
-                    <p id="repos">0</p>
-                </div>
-                <div>
-                    <p>Following</p>
-                    <p id="following">0</p>
-                </div>
-                <div>
-                    Followers
-                    <p id="followers">0</p>
-                </div>
-            </div>
+        <div class="flex gap-2 py-1 items-center">
+          <img src="./assets/x.jpg" alt="Twitter" class="w-5 rounded-full" />
+          <p id="x">Not available</p>
+        </div>
+      </div>
+      <p class="py-3 text-center text-xs text-gray-500 bg-gray-100 rounded-b-xl">Thank You</p>
+    </section>
+  </div>
 
-            <div class="ml-6">
-                <div class="flex gap-2 py-1">
-                    <img src="./assets/map-pin.svg" alt="my location">
-                    <p id="location">Null</p>
-                </div>
-                
-                <div class="flex gap-2 py-1">
-                    <img src="./assets/building-office-2.svg" alt="office">
-                    <p id="office">Null</p>
-                </div>
-
-                <div class="flex gap-2 py-1">
-                    <img src="./assets/x.jpg" alt="account" class="w-6">
-                    <p id="x">Null</p>
-                </div>
-            </div>
-            <p class="py-4 mt-3 text-center bg-gray-200">Thank You</p>
-        </section>
-    </div>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
